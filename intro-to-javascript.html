@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro to JavaScript</title>
+    <style>
+        p {
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolores explicabo ipsam               laboriosam molestias pariatur quae quaerat. Aperiam at dignissimos
+        doloribus iste praesentium quam quia quis reiciendis, rem repellat sint!
+    </p>
+    <p id="hideable">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto at blanditiis doloribus           ducimus eligendi esse eum magnam provident qui quidem sit, unde
+        veritatis voluptas, voluptate? Deleniti ipsam laborum quas?
+     </p>
+     <button id="toggle">Toggle Paragraph</button>
+    <script>
+        let toggleButton = document.getElementById("toggle");
+        let hideableParagraph = document.getElementById("hideable");
+        toggleButton.onclick = function(){
+            let theHideClass = hideableParagraph.getAttribute("class");
+            if (theHideClass == "hidden") {
+                hideableParagraph.removeAttribute("class");
+            } else {
+                hideableParagraph.setAttribute("class", "hidden");
+            }
+        }
+        function findFutureTime(hoursFromNow, currentTime) {
+            return hoursFromNow % 24 + currentTime;
+        }
+        findFutureTime(3, 10);
+    </script>
+</body>
+</html>
