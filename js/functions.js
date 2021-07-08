@@ -74,9 +74,16 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+var billTotal = prompt("What was the bill total?");
+var percentage = prompt("What percentage do you want to tip?");
+
 function calculateTip(percentage, billTotal) {
-    return((billTotal * percentage).toFixed(2));
+    var tipAmount = billTotal * percentage;
+    return tipAmount.toFixed(2);
+
 }
+
+alert("You should leave a tip amount of: $" + calculateTip(percentage, billTotal));
 
 /**
  * TODO:
@@ -99,3 +106,7 @@ function calculateTip(percentage, billTotal) {
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+function applyDiscount(originalPrice, discountPercent) {
+    var discountPrice = originalPrice - (originalPrice * discountPercent);
+    return discountPrice.toFixed(2);
+}
