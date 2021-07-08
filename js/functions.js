@@ -60,6 +60,8 @@ function isTwo(num) {
     return num === 2;
 }
 
+console.log(isTwo(random));
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -71,6 +73,10 @@ function isTwo(num) {
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+
+function calculateTip(percentage, billTotal) {
+    return((billTotal * percentage).toFixed(2));
+}
 
 /**
  * TODO:
