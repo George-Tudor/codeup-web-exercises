@@ -113,8 +113,9 @@ alert(analyzeColor(colorName));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(luckyNum, totalAmount) {
-     switch(luckyNum) {
+function calculateTotal(luckyNumber, totalAmount) {
+     switch(luckyNumber) {
+         var discountedPrice;
          case 0:
              return totalAmount;
          case 1:
@@ -140,7 +141,9 @@ function calculateTotal(luckyNum, totalAmount) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+var totalAmount = prompt("What was your total bill?")
+
 
 /**
  * TODO:
