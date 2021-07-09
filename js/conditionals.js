@@ -59,31 +59,31 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Refactor your above function to use a switch-case statement
  */
 
-var colorName = prompt("Pick a color, any color!");
-
-function analyzeColor(colorName) {
-    switch(colorName) {
-        case 'red':
-            return 'red is the color of apples';
-        case 'orange':
-            return 'orange is the color of goldfish';
-        case 'yellow':
-            return 'yellow is the color of the submarine';
-        case 'green':
-            return 'green is the color of frogs';
-        case 'blue':
-            return 'blue is the color of the sky';
-        case 'indigo':
-            return 'indigo is the color of a Bellflower';
-        case 'violet':
-            return 'violet is the color of grapes';
-        default:
-            return 'i don\'t know anything about ' + colorName;
-    }
-}
-console.log(colorName);
-
-alert(analyzeColor(colorName));
+// var colorName = prompt("Pick a color, any color!");
+//
+// function analyzeColor(colorName) {
+//     switch(colorName) {
+//         case 'red':
+//             return 'red is the color of apples';
+//         case 'orange':
+//             return 'orange is the color of goldfish';
+//         case 'yellow':
+//             return 'yellow is the color of the submarine';
+//         case 'green':
+//             return 'green is the color of frogs';
+//         case 'blue':
+//             return 'blue is the color of the sky';
+//         case 'indigo':
+//             return 'indigo is the color of a Bellflower';
+//         case 'violet':
+//             return 'violet is the color of grapes';
+//         default:
+//             return 'i don\'t know anything about ' + colorName;
+//     }
+// }
+// console.log(colorName);
+//
+// alert(analyzeColor(colorName));
 //console.log(analyzeColor(randomColor));
 
 /**
@@ -114,18 +114,22 @@ alert(analyzeColor(colorName));
  * return value.
  */
 function calculateTotal(luckyNumber, totalAmount) {
-     switch(luckyNumber) {
-         var discountedPrice;
+    var discountedPrice;
+    switch(luckyNumber) {
          case 0:
              return totalAmount;
          case 1:
-             return totalAmount * 0.9;
+             discountedPrice = totalAmount * 0.9;
+             return discountedPrice;
          case 2:
-             return totalAmount * 0.75;
+             discountedPrice = totalAmount * 0.75;
+             return discountedPrice;
          case 3:
-             return totalAmount * 0.65;
+             discountedPrice = totalAmount * 0.65;
+             return discountedPrice;
          case 4:
-             return totalAmount * 0.50;
+             discountedPrice = totalAmount * 0.50;
+             return discountedPrice;
          case 5:
              return 'You get it all for free!'
          default:
@@ -142,7 +146,12 @@ function calculateTotal(luckyNumber, totalAmount) {
  */
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
-var totalAmount = prompt("What was your total bill?")
+var totalAmount = prompt("What was your total bill?");
+if(luckyNumber === 5 ) {
+    alert("Your lucky number was " + luckyNumber + ", and your original total was $" + totalAmount + ", so you get it all for free!!!")
+} else {
+    alert("Your lucky number was " + luckyNumber + ", and your original total was $" + totalAmount + ", so your discounted price is $" + calculateTotal(luckyNumber, totalAmount) + "!!!");
+}
 
 
 /**
