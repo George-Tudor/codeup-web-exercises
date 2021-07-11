@@ -9,11 +9,13 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-var helloMessage = function sayHello(name) {
+function sayHello(name) {
     return "Hello, " + name + "!";
 }
 
+var helloMessage = sayHello('George Tudor!');
 
+alert(helloMessage);
 
 /**
  * TODO:

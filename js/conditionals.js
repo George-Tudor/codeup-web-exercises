@@ -113,29 +113,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(luckyNumber, totalAmount) {
-    var discountedPrice;
-    switch(luckyNumber) {
-         case 0:
-             return totalAmount;
-         case 1:
-             discountedPrice = totalAmount * 0.9;
-             return discountedPrice;
-         case 2:
-             discountedPrice = totalAmount * 0.75;
-             return discountedPrice;
-         case 3:
-             discountedPrice = totalAmount * 0.65;
-             return discountedPrice;
-         case 4:
-             discountedPrice = totalAmount * 0.50;
-             return discountedPrice;
-         case 5:
-             return 'You get it all for free!'
-         default:
-             return 'You must enter a number that\'s 0 through 5';
-     }
-}
+// function calculateTotal(luckyNumber, totalAmount) {
+//     var discountedPrice;
+//     switch(luckyNumber) {
+//          case 0:
+//              return totalAmount;
+//          case 1:
+//              discountedPrice = totalAmount * 0.9;
+//              return discountedPrice;
+//          case 2:
+//              discountedPrice = totalAmount * 0.75;
+//              return discountedPrice;
+//          case 3:
+//              discountedPrice = totalAmount * 0.65;
+//              return discountedPrice;
+//          case 4:
+//              discountedPrice = totalAmount * 0.50;
+//              return discountedPrice;
+//          case 5:
+//              return 'You get it all for free!'
+//          default:
+//              return 'You must enter a number that\'s 0 through 5';
+//      }
+// }
 
 /**
  * TODO:
@@ -146,19 +146,20 @@ function calculateTotal(luckyNumber, totalAmount) {
  */
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
-var totalAmount = prompt("What was your total bill?");
-if(luckyNumber === 5 ) {
-    alert("Your lucky number was " + luckyNumber + ", and your original total was $" + totalAmount + ", so you get it all for free!!!")
-} else {
-    alert("Your lucky number was " + luckyNumber + ", and your original total was $" + totalAmount + ", so your discounted price is $" + calculateTotal(luckyNumber, totalAmount) + "!!!");
-}
+// var totalAmount = prompt("What was your total bill?");
+// if(luckyNumber === 5 ) {
+//     alert("Your lucky number was " + luckyNumber + ", and your original total was $" + totalAmount + ", so you get it all for free!!!")
+// } else {
+//     alert("Your lucky number was " + luckyNumber + ", and your original total was $" + totalAmount + ", so your discounted price is $" + calculateTotal(luckyNumber, totalAmount) + "!!!");
+//}
 
 
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
- * would like to enter a number. If they click 'Ok', prompt the user for a
- * number, then use 3 separate alerts to tell the user:
+ * would like to enter a number.
+ *
+ * If they click 'Ok', prompt the user for a number, then use 3 separate alerts to tell the user:
  *
  * - whether the number is even or odd
  * - what the number plus 100 is
@@ -170,3 +171,44 @@ if(luckyNumber === 5 ) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+var enterNumber = confirm('Would you like to enter a number?');
+
+if(enterNumber) {
+    var userNumber;
+    userNumber = prompt('Please enter a number, any number!');
+    function isOddOrEven(userNumber) {
+        var numParity = "odd";
+        if(userNumber % 2 === 0) {
+            numParity = "even";
+            return numParity;
+        } else {
+            return numParity;
+        }
+
+    }
+
+    function plusOneHundred(userNumber) {
+        userNumber = Number(userNumber);
+        return (userNumber + 100);
+    }
+
+    function sigNum(userNumber) {
+        if(Math.sign(userNumber) > 0) {
+            return "positive";
+        } else if(Math.sign(userNumber) < 0) {
+            return "negative";
+        } else {
+            return "not a positive or negative";
+        }
+
+    }
+    
+
+    alert('The number ' + userNumber + ' is ' + isOddOrEven(userNumber) + '.');
+
+    alert('The number ' + userNumber + ' plus 100 is ' + plusOneHundred(userNumber) + '.');
+
+    alert('The number ' + userNumber + ' is a ' + sigNum(userNumber) + " number.")
+} else {
+    alert('Are you sure you don\'t want to enter a number?');
+}
