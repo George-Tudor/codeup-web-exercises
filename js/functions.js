@@ -13,9 +13,8 @@ function sayHello(name) {
     return "Hello, " + name + "!";
 }
 
-var helloMessage = sayHello('George Tudor!');
 
-alert(helloMessage);
+
 
 /**
  * TODO:
@@ -24,7 +23,8 @@ alert(helloMessage);
  *
  * console.log 'helloMessage' to check your work
  */
-console.log(helloMessage("George"));
+var helloMessage = sayHello('George Tudor!');
+// console.log(helloMessage);
 
 /**
  * TODO:
@@ -32,8 +32,11 @@ console.log(helloMessage("George"));
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
 var myName = "George";
-console.log(helloMessage(myName));
+// console.log(sayHello(myName))
+
+
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -62,7 +65,8 @@ function isTwo(num) {
     return num === 2;
 }
 
-console.log(isTwo(random));
+// console.log(random);
+// console.log(isTwo(random));
 
 /**
  * TODO:
@@ -75,17 +79,16 @@ console.log(isTwo(random));
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-
-var billTotal = prompt("What was the bill total?");
-var percentage = prompt("What percentage do you want to tip?");
-
-function calculateTip(percentage, billTotal) {
-    var tipAmount = billTotal * percentage;
-    return tipAmount.toFixed(2);
-
-}
-
-alert("You should leave a tip amount of: $" + calculateTip(percentage, billTotal));
+//
+// var billTotalInDollars = prompt("What was the bill total?");
+// var preferredTipPercent = prompt("What percentage do you want to tip?");
+//
+//
+// function calculateTip(percentage, billTotal) {
+//     return percentage * billTotal;
+// }
+//
+// alert("You should leave a tip amount of: $" + calculateTip(billTotalInDollars, preferredTipPercent).toFixed(2));
 
 /**
  * TODO:
@@ -109,6 +112,7 @@ alert("You should leave a tip amount of: $" + calculateTip(percentage, billTotal
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 function applyDiscount(originalPrice, discountPercent) {
-    var discountPrice = originalPrice - (originalPrice * discountPercent);
-    return discountPrice.toFixed(2);
+    return (originalPrice - (originalPrice * discountPercent)).toFixed(2);
+
 }
+
