@@ -1,5 +1,6 @@
 "use strict"
 
+//Exercise #2
 // function showMultiplicationTable(number) {
 //     for(var i = 1; i <= 10; i++) {
 //         console.log(number + " x " + i + " = " + number * i);
@@ -7,6 +8,7 @@
 // }
 // showMultiplicationTable(7);
 
+//Exercise #3
 // function parity() {
 //     for(var i = 1; i <= 10; i++) {
 //         var randomNum = Math.floor(Math.random() * 180) + 20;
@@ -19,10 +21,16 @@
 // }
 // parity();
 
-function repeatNumbers() {
-    for (var i = 1; i < 10; i++) {
-        var adder = i.toString().repeat(i);
-        console.log(adder);
-    }
-}
-repeatNumbers();
+//Exercise #4
+// function repeatNumbers() {
+//     for (var i = 1; i < 10; i++) {
+//         var adder = i.toString().repeat(i);
+//         console.log(adder);
+//     }
+// }
+// repeatNumbers();
+
+//Exercise #5
+// for(var i = 100; i > 0; i -= 5) {
+//     console.log(i);
+// }
