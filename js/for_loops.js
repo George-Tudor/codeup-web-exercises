@@ -19,6 +19,10 @@
 // }
 // parity();
 
-for(var i = 1; i < 10; i++) {
-    console.log(i++)
+function repeatNumbers() {
+    for (var i = 1; i < 10; i++) {
+        var adder = i.toString().repeat(i);
+        console.log(adder);
+    }
 }
+repeatNumbers();
