@@ -1,6 +1,6 @@
 "use strict"
 
-//Exercise #2
+// //Exercise #2
 // function showMultiplicationTable(number) {
 //     for(var i = 1; i <= 10; i++) {
 //         console.log(number + " x " + i + " = " + number * i);
@@ -11,11 +11,11 @@
 //Exercise #3
 // function parity() {
 //     for(var i = 1; i <= 10; i++) {
-//         var randomNum = Math.floor(Math.random() * 180) + 20;
+//         var randomNum = Math.floor(Math.random() * 181) + 20;
 //         if(randomNum % 2 === 0) {
-//             console.log("Pass " + i + " result: " +randomNum + " is even");
+//             console.log("Pass " + i + " result: " + randomNum + " is even");
 //         } else {
-//             console.log("Pass " + i + " result: " +randomNum + " is odd");
+//             console.log("Pass " + i + " result: " + randomNum + " is odd");
 //         }
 //     }
 // }
