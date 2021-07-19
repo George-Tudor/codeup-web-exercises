@@ -40,8 +40,8 @@
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach(function(element){
-        console.log(element);
+    names.forEach(function(name){
+        console.log(name);
     });
 
     /**
@@ -58,20 +58,20 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
     var numArray = [1, 2, 3, 4, 5];
-    // function whatsFirst(someArray) {
-    //     return someArray[0];
-    // }
-    //
-    // function whatsSecond(someArray) {
-    //     return someArray[1];
-    // }
-    //
-    // function whatsLast(someArray) {
-    //     return someArray[someArray.length -1];
-    // }
-    // console.log(whatsFirst(numArray));
-    // console.log(whatsSecond(numArray));
-    // console.log(whatsLast(numArray));
+    function whatsFirst(someArray) {
+        return someArray[0];
+    }
+
+    function whatsSecond(someArray) {
+        return someArray[1];
+    }
+
+    function whatsLast(someArray) {
+        return someArray[someArray.length -1];
+    }
+    console.log(whatsFirst(numArray));
+    console.log(whatsSecond(numArray));
+    console.log(whatsLast(numArray));
 
 
 })();
