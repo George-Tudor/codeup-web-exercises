@@ -114,9 +114,11 @@
                 lastName: 'Ross'
             }
         }]
-    console.log(books[1].title);
 
-    books.forEach()
+
+    books.forEach(function(book, index ) {
+        console.log('Book # ' + index + '\n\n' + 'Title: ' + book.title + '\n\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName);
+    });
 
     /**
      * TODO:
