@@ -118,29 +118,29 @@
     //     }]
 
     //Refactored code for books array
-    var books = [];
-
-    function createBook(bookTitle, authorFirstName, authorLastName) {
-        return {
-            title: bookTitle,
-            author: {
-                firstName: authorFirstName,
-                lastName: authorLastName
-            }
-        }
-    }
-books.push(createBook('Batman: Year One', 'Frank', 'Miller'));
-books.push(createBook('Fight Club', 'Chuck', 'Palahniuk'));
-books.push(createBook('Gideon the Ninth', 'Tamsyn', 'Muir'));
-books.push(createBook('Tools of Titans', 'Tim', 'Ferriss'));
-books.push(createBook('House of Leaves', 'Mark', 'Danielewski'));
-books.push(createBook('The Mood Cure', 'Julia', 'Ross'));
-
-    // Looping through array of objects with values of title, author's first and last name and outputting to the console
-
-    books.forEach(function(book, index) {
-        console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
-    });
+//     var books = [];
+//
+//     function createBook(bookTitle, authorFirstName, authorLastName) {
+//         return {
+//             title: bookTitle,
+//             author: {
+//                 firstName: authorFirstName,
+//                 lastName: authorLastName
+//             }
+//         }
+//     }
+// books.push(createBook('Batman: Year One', 'Frank', 'Miller'));
+// books.push(createBook('Fight Club', 'Chuck', 'Palahniuk'));
+// books.push(createBook('Gideon the Ninth', 'Tamsyn', 'Muir'));
+// books.push(createBook('Tools of Titans', 'Tim', 'Ferriss'));
+// books.push(createBook('House of Leaves', 'Mark', 'Danielewski'));
+// books.push(createBook('The Mood Cure', 'Julia', 'Ross'));
+//
+//     // Looping through array of objects with values of title, author's first and last name and outputting to the console
+//
+//     books.forEach(function(book, index) {
+//         console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
+//     });
 
     /**
      * TODO:
@@ -187,37 +187,40 @@ books.push(createBook('The Mood Cure', 'Julia', 'Ross'));
 
     //The code below was an experiment of the 'createBook' function
 
-    // function bookLogger() {
-    //     do {
-    //         var addBooks = prompt('Do you have a book to enter? (Yes or No)');
-    //
-    //         if (addBooks === 'No' || addBooks === 'no' || addBooks === 'N' || addBooks === 'n') {
-    //             alert('Good Bye!')
-    //         } else {
-    //             var bookTitle = prompt('What is the book title?');
-    //             var authorFirstName = prompt('What is the author\'s first name?');
-    //             var authorLastName = prompt('What is the author\'s last name?');
-    //             var booksArray = [];
-    //
-    //             function createBook(bookTitle, authorFirstName, authorLastName) {
-    //                 return {
-    //                     title: bookTitle,
-    //                     author: {
-    //                         firstName: authorFirstName,
-    //                         lastName: authorLastName
-    //                     }
-    //                 }
-    //             }
-    //
-    //             booksArray.push(createBook(bookTitle, authorFirstName, authorLastName));
-    //             booksArray.forEach(function(book, index) {
-    //                 console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
-    //             });
-    //
-    //         }
-    //     } while (addBooks === 'Yes' || addBooks === 'Y' || addBooks === 'yes' || addBooks === 'y');
-    //
-    // }
-    // bookLogger();
+
+    function createBook(bookTitle, authorFirstName, authorLastName) {
+        return {
+            title: bookTitle,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
+        }
+    }
+
+    var booksArray = [];
+
+    function bookLogger() {
+        do {
+            var addBooks = prompt('Do you have a book to enter? (Yes or No)');
+
+            if (addBooks === 'No' || addBooks === 'no' || addBooks === 'N' || addBooks === 'n') {
+                alert('Good Bye!')
+            } else {
+                var bookTitle = prompt('What is the book title?');
+                var authorFirstName = prompt('What is the author\'s first name?');
+                var authorLastName = prompt('What is the author\'s last name?');
+
+
+                booksArray.push(createBook(bookTitle, authorFirstName, authorLastName));
+                booksArray.forEach(function(book, index) {
+                    console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
+                });
+
+            }
+        } while (addBooks === 'Yes' || addBooks === 'Y' || addBooks === 'yes' || addBooks === 'y');
+
+    }
+    bookLogger();
 
 //})();
