@@ -110,9 +110,13 @@ var salesReport = {
         }],
         getEmployeeCount: function() {
             return this.employees.length;
-        },
+            },
         getTotalNumberOfSales: function() {
-
+        var salesTotal = 0;
+            for (var i = 0; i <= this.employees.length -1; i++) {
+                console.log(this.employees[i].sales_units += salesTotal);
+                }
+            return salesTotal;
         },
         getAverageSalesPerEmployee: function() {
 
