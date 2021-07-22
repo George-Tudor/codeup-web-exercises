@@ -114,7 +114,7 @@ var salesReport = {
         getTotalNumberOfSales: function() {
         var salesTotal = 0;
             for (var i = 0; i <= this.employees.length -1; i++) {
-                console.log(this.employees[i].sales_units += salesTotal);
+                salesTotal += this.employees[i].sales_units;
                 }
             return salesTotal;
         },
