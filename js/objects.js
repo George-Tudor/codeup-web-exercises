@@ -53,17 +53,48 @@
         {name: 'George', amount: 320}
     ];
 
-    function doesDiscount(arr) {
-    var discount = 0.88;
-        arr.forEach(function(shopper) {
-            if(shopper.amount > 200) {
-                console.log(shopper.name + ' spent $' + shopper.amount + ' dollars, so they get a 12% discount!  Their new total is $' + shopper.amount * discount + '!')
-            } else {
-                console.log(shopper.name + ' spent $' + shopper.amount + ' dollars, so they don\'t get a discount.  Their total remains $' + shopper.amount +'. Poor ' + shopper.name + ' :(');
-            }
-        });
+    // function doesDiscount(arr) {
+    // var discount = 0.88;
+    //     arr.forEach(function(shopper) {
+    //         if(shopper.amount > 200) {
+    //             console.log(shopper.name + ' spent $' + shopper.amount + ' dollars, so they get a 12% discount!  Their new total is $' + shopper.amount * discount + '!')
+    //         } else {
+    //             console.log(shopper.name + ' spent $' + shopper.amount + ' dollars, so they don\'t get a discount.  Their total remains $' + shopper.amount +'. Poor ' + shopper.name + ' :(');
+    //         }
+    //     });
+    // }
+    // doesDiscount(shoppers);
+
+// for (var i = 0; i < shoppers.length; i += 1) {
+//     var discountedAmount = calculateDiscount(shoppers[i].amount, discountThreshold, discountPercentage);
+//     var output = shoppers[i].name + ' is purchasing ' + shoppers[i].amount +
+//         ' of stuff. He will get ' + discountedAmount +
+//         ' off the purchase and pay ' +
+//         (shoppers[i].amount - discountedAmount) + '.';
+//     console.log(output);
+// }
+
+var discountThreshold = 200;
+var discountPercentage = .12;
+
+function calculateDiscount(amount, threshold, discountPercentage) {
+    // if the amount is greater than the threshold, apply the discountPercentage
+    if (amount <= threshold) {
+        return 0
+    } else {
+        return amount * discountPercentage;
     }
-    doesDiscount(shoppers);
+}
+
+shoppers.forEach(function(shopper) {
+    var discountedAmount = calculateDiscount(shopper.amount, discountThreshold, discountPercentage);
+    var output = shopper.name + ' is purchasing ' + shopper.amount +
+        ' of stuff. He will get ' + discountedAmount +
+        ' off the purchase and pay ' +
+        (shopper.amount - discountedAmount) + '.';
+    console.log(output);
+});
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -118,29 +149,29 @@
     //     }]
 
     //Refactored code for books array
-//     var books = [];
-//
-//     function createBook(bookTitle, authorFirstName, authorLastName) {
-//         return {
-//             title: bookTitle,
-//             author: {
-//                 firstName: authorFirstName,
-//                 lastName: authorLastName
-//             }
-//         }
-//     }
-// books.push(createBook('Batman: Year One', 'Frank', 'Miller'));
-// books.push(createBook('Fight Club', 'Chuck', 'Palahniuk'));
-// books.push(createBook('Gideon the Ninth', 'Tamsyn', 'Muir'));
-// books.push(createBook('Tools of Titans', 'Tim', 'Ferriss'));
-// books.push(createBook('House of Leaves', 'Mark', 'Danielewski'));
-// books.push(createBook('The Mood Cure', 'Julia', 'Ross'));
-//
+    var books = [];
+
+    function createBook(bookTitle, authorFirstName, authorLastName) {
+        return {
+            title: bookTitle,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
+        }
+    }
+books.push(createBook('Batman: Year One', 'Frank', 'Miller'));
+books.push(createBook('Fight Club', 'Chuck', 'Palahniuk'));
+books.push(createBook('Gideon the Ninth', 'Tamsyn', 'Muir'));
+books.push(createBook('Tools of Titans', 'Tim', 'Ferriss'));
+books.push(createBook('House of Leaves', 'Mark', 'Danielewski'));
+books.push(createBook('The Mood Cure', 'Julia', 'Ross'));
+
 //     // Looping through array of objects with values of title, author's first and last name and outputting to the console
 //
-//     books.forEach(function(book, index) {
-//         console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
-//     });
+    books.forEach(function(book, index) {
+        console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
+    });
 
     /**
      * TODO:
@@ -188,39 +219,39 @@
     //The code below was an experiment of the 'createBook' function
 
 
-    function createBook(bookTitle, authorFirstName, authorLastName) {
-        return {
-            title: bookTitle,
-            author: {
-                firstName: authorFirstName,
-                lastName: authorLastName
-            }
-        }
-    }
-
-    var booksArray = [];
-
-    function bookLogger() {
-        do {
-            var addBooks = prompt('Do you have a book to enter? (Yes or No)');
-
-            if (addBooks === 'No' || addBooks === 'no' || addBooks === 'N' || addBooks === 'n') {
-                alert('Good Bye!')
-            } else {
-                var bookTitle = prompt('What is the book title?');
-                var authorFirstName = prompt('What is the author\'s first name?');
-                var authorLastName = prompt('What is the author\'s last name?');
-
-
-                booksArray.push(createBook(bookTitle, authorFirstName, authorLastName));
-                booksArray.forEach(function(book, index) {
-                    console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
-                });
-
-            }
-        } while (addBooks === 'Yes' || addBooks === 'Y' || addBooks === 'yes' || addBooks === 'y');
-
-    }
-    bookLogger();
+    // function createBook(bookTitle, authorFirstName, authorLastName) {
+    //     return {
+    //         title: bookTitle,
+    //         author: {
+    //             firstName: authorFirstName,
+    //             lastName: authorLastName
+    //         }
+    //     }
+    // }
+    //
+    // var booksArray = [];
+    //
+    // function bookLogger() {
+    //     do {
+    //         var addBooks = prompt('Do you have a book to enter? (Yes or No)');
+    //
+    //         if (addBooks === 'No' || addBooks === 'no' || addBooks === 'N' || addBooks === 'n') {
+    //             alert('Good Bye!')
+    //         } else {
+    //             var bookTitle = prompt('What is the book title?');
+    //             var authorFirstName = prompt('What is the author\'s first name?');
+    //             var authorLastName = prompt('What is the author\'s last name?');
+    //
+    //
+    //             booksArray.push(createBook(bookTitle, authorFirstName, authorLastName));
+    //             booksArray.forEach(function(book, index) {
+    //                 console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
+    //             });
+    //
+    //         }
+    //     } while (addBooks === 'Yes' || addBooks === 'Y' || addBooks === 'yes' || addBooks === 'y');
+    //
+    // }
+    // bookLogger();
 
 //})();
