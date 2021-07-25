@@ -113,7 +113,7 @@ var salesReport = {
             },
         getTotalNumberOfSales: function() {
         var salesTotal = 0;
-            for (var i = 0; i <= this.employees.length -1; i++) {
+            for (var i = 0; i <= this.employees.length - 1; i++) {
                 salesTotal += this.employees[i].sales_units;
                 }
             return salesTotal;
@@ -985,3 +985,46 @@ var profiles = [
         "favoriteFruit": "strawberry"
     }
 ]
+
+var profileReport = {
+    getProfileCount: function () {
+            return profiles.length;
+    },
+    getActiveCount: function () {
+        var totalIsActive = 0;
+        for(var i = 0; i <= profiles.length - 1; i++) {
+            if(profiles[i].isActive === true) {
+                totalIsActive++;
+            }
+        }
+        return totalIsActive;
+    },
+    // newerGetActiveCount () {
+    //     return profiles.filter(profile => profile.isActive).length;
+    // }
+    getInActiveCount: function () {
+        var totalNotActive = 0;
+        for (var i = 0; i <= profiles.length - 1; i++) {
+            if (profiles[i].isActive === false) {
+                totalNotActive++;
+            }
+        }
+        return totalNotActive;
+    },
+    sumOfAllBalances: function () {
+        var totalSumOfBalances = 0;
+            for(var i = 0; i <= profiles.length - 1; i++) {
+            var currentBalance = parseFloat(profiles[i].balance.split('').splice(1, profiles[i].balance.length).join('').replaceAll(',', ''));
+        totalSumOfBalances += currentBalance;
+        }
+        return totalSumOfBalances;
+    },
+    getAverageBalance: function () {
+        return (this.sumOfAllBalances() / this.getProfileCount()).toFixed(2);
+    },
+    getLowestBalance: function () {
+
+    }
+}
+
+
