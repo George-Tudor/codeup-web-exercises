@@ -992,7 +992,7 @@ var profileReport = {
     },
     getActiveCount: function () {
         var totalIsActive = 0;
-        for(var i = 0; i <= profiles.length - 1; i++) {
+        for(var i = 0; i < profiles.length; i++) {
             if(profiles[i].isActive === true) {
                 totalIsActive++;
             }
@@ -1004,7 +1004,7 @@ var profileReport = {
     // }
     getInActiveCount: function () {
         var totalNotActive = 0;
-        for (var i = 0; i <= profiles.length - 1; i++) {
+        for (var i = 0; i < profiles.length; i++) {
             if (profiles[i].isActive === false) {
                 totalNotActive++;
             }
@@ -1013,7 +1013,7 @@ var profileReport = {
     },
     sumOfAllBalances: function () {
         var totalSumOfBalances = 0;
-            for(var i = 0; i <= profiles.length - 1; i++) {
+            for(var i = 0; i < profiles.length; i++) {
             var currentBalance = parseFloat(profiles[i].balance.split('').splice(1, profiles[i].balance.length).join('').replaceAll(',', ''));
         totalSumOfBalances += currentBalance;
         }
@@ -1023,7 +1023,15 @@ var profileReport = {
         return (this.sumOfAllBalances() / this.getProfileCount()).toFixed(2);
     },
     getLowestBalance: function () {
-
+        var balance = parseFloat(profiles[0].balance.split('').splice(1, profiles[0].balance.length).join('').replaceAll(',', ''));
+        console.log(balance);
+        for(var i = 1; i < profiles.length; i++) {
+            var currentBalance = parseFloat(profiles[i].balance.split('').splice(1, profiles[i].balance.length).join('').replaceAll(',', ''));
+            if(currentBalance < balance) {
+                balance = currentBalance;
+            }
+        }
+        return balance;
     }
 }
 
