@@ -111,42 +111,42 @@ shoppers.forEach(function(shopper) {
 
         //The array of objects consisting of book title, and the author's first and last name
 
-    // var books =
-    //     [{
-    //         title: 'Fight Club',
-    //         author: {
-    //             firstName: 'Chuck',
-    //             lastName: 'Palahniuk'
-    //         }
-    //     },
-    //     {
-    //         title: 'Gideon the Ninth',
-    //         author: {
-    //             firstName: 'Tamsyn',
-    //             lastName: 'Muir'
-    //         }
-    //     },
-    //     {
-    //         title: 'Tools of Titans',
-    //         author: {
-    //             firstName: 'Tim',
-    //             lastName: 'Ferriss'
-    //         }
-    //     },
-    //     {
-    //         title: 'House of Leaves',
-    //         author: {
-    //             firstName: 'Mark',
-    //             lastName: 'Danielewski'
-    //         }
-    //     },
-    //     {
-    //         title: 'The Mood Cure',
-    //         author: {
-    //             firstName: 'Julia',
-    //             lastName: 'Ross'
-    //         }
-    //     }]
+    var books =
+        [{
+            title: 'Fight Club',
+            author: {
+                firstName: 'Chuck',
+                lastName: 'Palahniuk'
+            }
+        },
+        {
+            title: 'Gideon the Ninth',
+            author: {
+                firstName: 'Tamsyn',
+                lastName: 'Muir'
+            }
+        },
+        {
+            title: 'Tools of Titans',
+            author: {
+                firstName: 'Tim',
+                lastName: 'Ferriss'
+            }
+        },
+        {
+            title: 'House of Leaves',
+            author: {
+                firstName: 'Mark',
+                lastName: 'Danielewski'
+            }
+        },
+        {
+            title: 'The Mood Cure',
+            author: {
+                firstName: 'Julia',
+                lastName: 'Ross'
+            }
+        }]
 
     //Refactored code for books array
     var books = [];
@@ -172,6 +172,7 @@ books.push(createBook('The Mood Cure', 'Julia', 'Ross'));
     books.forEach(function(book, index) {
         console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + book.title + '\n' + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n ---');
     });
+
 
     /**
      * TODO:
