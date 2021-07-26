@@ -990,18 +990,18 @@ var profileReport = {
     getProfileCount: function () {
             return profiles.length;
     },
-    getActiveCount: function () {
-        var totalIsActive = 0;
-        for(var i = 0; i < profiles.length; i++) {
-            if(profiles[i].isActive === true) {
-                totalIsActive++;
-            }
-        }
-        return totalIsActive;
+    // getActiveCount: function () {
+    //     var totalIsActive = 0;
+    //     for(var i = 0; i < profiles.length; i++) {
+    //         if(profiles[i].isActive === true) {
+    //             totalIsActive++;
+    //         }
+    //     }
+    //     return totalIsActive;
+    // },
+    newerGetActiveCount () {
+        return profiles.filter(profile => profile.isActive).length;
     },
-    // newerGetActiveCount () {
-    //     return profiles.filter(profile => profile.isActive).length;
-    // }
     getInActiveCount: function () {
         var totalNotActive = 0;
         for (var i = 0; i < profiles.length; i++) {
@@ -1014,7 +1014,7 @@ var profileReport = {
     sumOfAllBalances: function () {
         var totalSumOfBalances = 0;
             for(var i = 0; i < profiles.length; i++) {
-            var currentBalance = parseFloat(profiles[i].balance.split('').splice(1, profiles[i].balance.length).join('').replaceAll(',', ''));
+            var currentBalance = parseFloat(profiles[i].balance.replaceAll('$', '').replaceAll(',', '');
         totalSumOfBalances += currentBalance;
         }
         return totalSumOfBalances;
@@ -1024,7 +1024,6 @@ var profileReport = {
     },
     getLowestBalance: function () {
         var balance = parseFloat(profiles[0].balance.split('').splice(1, profiles[0].balance.length).join('').replaceAll(',', ''));
-        console.log(balance);
         for(var i = 1; i < profiles.length; i++) {
             var currentBalance = parseFloat(profiles[i].balance.split('').splice(1, profiles[i].balance.length).join('').replaceAll(',', ''));
             if(currentBalance < balance) {
@@ -1032,6 +1031,12 @@ var profileReport = {
             }
         }
         return balance;
+    },
+    getHighestBalance: function () {
+        var balance = parseFloat(profiles[0].balance.split('').splice(1, profiles[0].balance.length).join('').replaceAll(',', ''));
+        for(var i = 1; i < profiles.length; i++) {
+
+        }
     }
 }
 
