@@ -988,7 +988,7 @@ var profiles = [
 
 var profileReport = {
     getProfileCount: function () {
-            return profiles.length;
+        return profiles.length;
     },
     // getActiveCount: function () {
     //     var totalIsActive = 0;
@@ -999,7 +999,7 @@ var profileReport = {
     //     }
     //     return totalIsActive;
     // },
-    newerGetActiveCount () {
+    newerGetActiveCount() {
         return profiles.filter(profile => profile.isActive).length;
     },
     getInActiveCount: function () {
@@ -1013,9 +1013,9 @@ var profileReport = {
     },
     sumOfAllBalances: function () {
         var totalSumOfBalances = 0;
-            for(var i = 0; i < profiles.length; i++) {
-            var currentBalance = parseFloat(profiles[i].balance.replaceAll('$', '').replaceAll(',', '');
-        totalSumOfBalances += currentBalance;
+        for (var i = 0; i < profiles.length; i++) {
+            var currentBalance = parseFloat(profiles[i].balance.replaceAll('$', '').replaceAll(',', ''));
+            totalSumOfBalances += currentBalance;
         }
         return totalSumOfBalances;
     },
@@ -1024,9 +1024,9 @@ var profileReport = {
     },
     getLowestBalance: function () {
         var balance = parseFloat(profiles[0].balance.split('').splice(1, profiles[0].balance.length).join('').replaceAll(',', ''));
-        for(var i = 1; i < profiles.length; i++) {
-            var currentBalance = parseFloat(profiles[i].balance.split('').splice(1, profiles[i].balance.length).join('').replaceAll(',', ''));
-            if(currentBalance < balance) {
+        for (var i = 1; i < profiles.length; i++) {
+            var currentBalance = parseFloat(profiles[i].balance.replaceAll('$', '').replaceAll(',', ''));
+            if (currentBalance < balance) {
                 balance = currentBalance;
             }
         }
@@ -1034,9 +1034,13 @@ var profileReport = {
     },
     getHighestBalance: function () {
         var balance = parseFloat(profiles[0].balance.split('').splice(1, profiles[0].balance.length).join('').replaceAll(',', ''));
-        for(var i = 1; i < profiles.length; i++) {
-
+        for (var i = 1; i < profiles.length; i++) {
+            var currentBalance = parseFloat(profiles[i].balance.replaceAll('$', '').replaceAll(',', ''));
+            if (currentBalance > balance) {
+                balance = currentBalance;
+                }
         }
+        return balance;
     }
 }
 
