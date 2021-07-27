@@ -1,6 +1,6 @@
 "use strict"
 
-console.log('testing......................')
+console.log('testing...')
 
 // Exercise 1. Write a function called makeCar that takes in two strings, make and model, and returns an object with those properties
 // Example: makeCar("VW", "beetle") returns the object {"make": "VW", "model", "beetle"}
@@ -986,6 +986,10 @@ var profiles = [
     }
 ]
 
+function isNumeric(input) {
+    return input === !isNaN(parseFloat(input));
+}
+
 var profileReport = {
     getProfileCount: function () {
         return profiles.length;
@@ -1041,7 +1045,20 @@ var profileReport = {
                 }
         }
         return balance;
-    }
+    },
+    getTotalNumberOfUnreadMessages() {
+
+
+        var number;
+        for(var i = 0; i < profiles.length; i++){
+            var messages = profiles[i].greeting;
+            messages.split()
+        }
+
+
+
+        console.log(messages);
+    },
 }
 
 
