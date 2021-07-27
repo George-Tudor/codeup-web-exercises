@@ -1,6 +1,6 @@
 "use strict"
 
-console.log('testing.........')
+console.log('testing......................')
 
 // Exercise 1. Write a function called makeCar that takes in two strings, make and model, and returns an object with those properties
 // Example: makeCar("VW", "beetle") returns the object {"make": "VW", "model", "beetle"}

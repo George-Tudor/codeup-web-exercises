@@ -4,7 +4,33 @@ line
 comment
 */
 
+
 .fancy-header {
-    color: purple; /* single line comment */
+    color: gold; /* single line comment */
     text-decoration: underline;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+
+h1 {
+    color: gold;
+    text-decoration: underline;
+    text-shadow: 2px 2px black;
+}
+
+li {
+    font-size: 1.5rem;
+    list-style: disc;
+}
+
+body {
+    background-color: transparent;
+    background-image: url("https://media.giphy.com/media/7FrOU9tPbgAZtxV5mb/giphy.gif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: luminosity;
+    color: gold;
+    text-shadow: 1.5px 1.5px lightcyan;
+    font-family: Helvetica, "Times New Roman", serif;
 }
