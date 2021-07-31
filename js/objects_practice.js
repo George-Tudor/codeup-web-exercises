@@ -1046,19 +1046,49 @@ var profileReport = {
         }
         return balance;
     },
-    getTotalNumberOfUnreadMessages() {
-
-
-        var number;
-        for(var i = 0; i < profiles.length; i++){
-            var messages = profiles[i].greeting;
-            messages.split()
+    getTheMostFavoriteFruit: function() {
+        for(var i = 0; i < profiles.length; i++) {
+            console.log('Profile # ' + i + ' favorite fruit ' + profiles[i].favoriteFruit);
         }
-
-
-
-        console.log(messages);
     },
+    getTheLeastFavoriteFruit: function() {
+
+    },
+
+    getTotalNumberOfUnreadMessages() {
+        var number = 0;
+        var adder;
+        for(var n = 0; n < profiles.length; n++) {
+            var greetingArray = profiles[n].greeting.split(' ');
+            for(var i = 0; i < greetingArray.length; i++) {
+                if(!isNaN(parseFloat((greetingArray[i]))) === true) {
+                    adder = parseFloat(greetingArray[i]);
+                    console.log('Profile # ' + n + ' has ' + adder + ' unread messages.');
+                }
+            }
+            number += adder;
+        }
+        console.log('There are ' + number + ' total unread messages.');
+        return number;
+    },
+    getAverageNumberOfUnreadMessages: function() {
+
+    },
+    getAverageAge: function() {
+
+    },
+    getGenderCounts: function() {
+
+    },
+    getAllCompanyNames: function() {
+
+    },
+    getMostCommonEyeColor: function() {
+
+    },
+    getBalancesForActiveAndNonActive: function() {
+
+    }
 }
 
 
