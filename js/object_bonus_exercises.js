@@ -1047,10 +1047,22 @@ var profileReport = {
         return balance;
     },
     getTheMostFavoriteFruit: function() {
-        for(var i = 0; i < profiles.length; i++) {
+        var fruitArray = [];
+        for (var i = 0; i < profiles.length; i++) {
             console.log('Profile # ' + i + ' favorite fruit ' + profiles[i].favoriteFruit);
+            fruitArray.push(profiles[i].favoriteFruit);
         }
-    },
+        fruitArray = fruitArray.sort();
+        return fruitArray;
+        //
+        // var newFruitArray;
+        // for
+
+        }
+
+
+
+    ,
     getTheLeastFavoriteFruit: function() {
 
     },
