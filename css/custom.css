@@ -4,6 +4,22 @@
     /*background-size: cover;*/
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
-    color: white !important;
+    color: black !important;
+    padding: 64px 0 64px 0;
 
+
+}
+h1 {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.55);
+    opacity: 75%;
+
+}
+body {
+    padding: .70rem;
+}
+.card {
+    margin-bottom: 1rem;
+}
+.card-footer {
 }
