@@ -74,11 +74,17 @@
 
         var thirdButton = document.getElementById("btn3");
         thirdButton.addEventListener('click', function () {
-            listItems[1].style.color = "gray";
-            listItems[3].style.color = "gray";
-            var dbid1 = document.querySelector('li[data-dbid="1"]');
-            dbid1.style.color = "blue";
+            for(var i = 0; i < listItems.length; i += 1) {
+                if(listItems[i].getAttribute('data-dbid') === '1') {
+                    listItems[i].style.color = 'blue';
+                }
+                if(i % 2 !== 0) {
+                    listItems[i].style.color = 'grey';
+                }
+            }
         });
+
+
         // TODO: Set text color of li with dbid = 1 to blue
 
 
