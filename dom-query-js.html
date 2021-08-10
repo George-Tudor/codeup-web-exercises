@@ -57,10 +57,12 @@
         listItems[1].style.color = "gray";
         listItems[3].style.color = "gray";
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = "blue";
+        // listItems[0].style.color = "blue";
+        var dbid1 = document.querySelector('li[data-dbid="1"]');
+        dbid1.style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.querySelector.p.sub-paragraph;
+        var subParagraphs = document.querySelector(".sub-paragraph");
         console.log(subParagraphs)
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
