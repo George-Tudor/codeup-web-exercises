@@ -6,4 +6,6 @@
     padding: .25rem;
     background-color: rgb(142, 159, 112);
 }
-
+.body {
+    padding: 1rem;
+}
