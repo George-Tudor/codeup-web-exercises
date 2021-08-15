@@ -7,10 +7,10 @@
 <body>
 <h1 id="header" class="page-header">jQuery exercises</h1>
 
-<div id="lorem" class="ipsum">
+<div id="lorem" class="codeup">
     <p class="first-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet animi asperiores at aut, consectetur delectus deleniti dolorum eligendi esse id ipsa iste laborum laudantium, molestiae nostrum praesentium quas quis, quo ullam unde ut voluptatem. Animi dolore eveniet ex, expedita maxime minus quia quibusdam sed soluta temporibus tenetur vel vitae!</p>
 </div>
-<div id="div1" class="marvel">
+<div id="div1" class="codeup">
     <h2 id="header2" class="heroes">Marvel Super Heroes</h2>
     <ul class="marvel-hero-list">
         <li class="avenger">Captain America</li>
@@ -19,7 +19,7 @@
         <li class="x-mean">Wolverine</li>
     </ul>
 </div>
-<div id="div2" class="dc">
+<div id="div2" class="codeup">
     <ul class="dc-hero-list">
         <li class="justice-league">Superman</li>
         <li class="justice-league">Batman</li>
@@ -33,13 +33,8 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
 </script>
 <script>
-    $(document).ready(function() {
-        "use strict";
-        alert('DOM Loaded');
+    $('.codeup').css('border', '1px solid red');
 
-        var contents = $('#div1').html();
-        alert(contents);
-    });
 </script>
 </body>
 </html>
