@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        body {
+            background-image: url();
+        }
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(function () {
+        "use strict";
+
+        var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+        var isKonami = [];
+
+
+        $(document).keyup(function (event) {
+            isKonami.push(event.keyCode);
+            console.log(konamiCode);
+            console.log(isKonami);
+            if (konamiCode.join('') === isKonami.join('')) {
+                alert('YOU HAVE ADDED 30 LIVES!');
+                document.body.style.background = "black url('img/contratitle.png') no-repeat top center";
+                var myAudio = new Audio('sound/coincredit.wav');
+                myAudio.play();
+                isKonami = [];
+
+            }
+        });
+
+
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

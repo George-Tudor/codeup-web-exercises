@@ -33,16 +33,13 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
 </script>
 <script>
-    $('li').css({
-        "font-size": "20px",
+    $('#header').click(function() {
+       $(this).css('background-color', 'blue')
     });
-
-    var header1 = $('h1');
-    alert(header1.html())
-
-    var elements = $('h1, p, li');
-
-    elements.each(element => console.log(element));
+    var ele = document.getElementById('p');
+    ele.addEventListener('dblclick', function(e) {
+        $(this).css('font-size', '18px');
+    });
 
 
 </script>
