@@ -1054,12 +1054,50 @@ var profileReport = {
         }
         fruitArray = fruitArray.sort();
         return fruitArray;
-        //
-        // var newFruitArray;
-        // for
-
-        }
-
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    //    const data = ["apple", "apple", "apple", "apple", "banana", "banana", "banana", "banana", "banana", "banana", "strawberry", "strawberry", "strawberry", "strawberry", "strawberry", "strawberry", "strawberry", "strawberry", "strawberry"]
+    //
+    //     function countFruits(arr) {
+    //         let output = {};
+    //         // {
+    //         // apple: 3,
+    //         // banana: 2,
+    //         // strwaberry: 10,
+    //         //}
+    //        for(let i = 0; i < arr.length; i++) {
+    //            let currentFruit = arr[i];
+    //            if(typeof output[currentFruit] === "undefined") {
+    //                console.log("here");
+    //                output[currentFruit] = 1;
+    //            } else {
+    //                output[currentFruit]++;
+    //            }
+    //            console.log(output);
+    //        }
+    //         return output;
+    //     }
+    //
+    //     // console.log(getHighestValue(countFruits(data)));
+    //
+    //     let [mostCommon, fruitCount] = getHighestValue(countFruits(data));
+    //
+    //     console.log("The most common fruit is " + mostCommon);
+    //     console.log("The fruit appears " + fruitCount);
+    //
+    //     function getHighestValue(obj) {
+    //         let highest = 0;
+    //         let bestFruit = "";
+    //         for(const fruit in obj) {
+    //             let fruitCount = obj[fruit];
+    //             if(fruitCount > highest) {
+    //                 highest = fruitCount;
+    //                 bestFruit = fruit;
+    //             }
+    //         }
+    //         return [bestFruit, highest];
+    //     }
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     ,
