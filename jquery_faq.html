@@ -52,6 +52,32 @@
     <dt class="parkName">Kenai Fjords National Park</dt>
     <dd class="invisible">Kenai Fjords National Park  is named for the numerous fjords carved by glaciers moving down the mountains from the Harding Icefield.</dd>
 </dl>
+
+<button id="makeYellow">Make yellow!</button>
+
+<ul>
+    <h3>The Park</h3>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+<ul>
+    <h3>The Other Park</h3>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+
+<ul>
+    <h3>Yet Other Park</h3>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
 </script>
 <script>
@@ -69,6 +95,15 @@
         $('#parkHeaders').click(function() {
             $('dt').toggleClass("parkHeading");
         });
+
+        $('#makeYellow').click(function() {
+            $('ul li:last-child').css('background-color', 'yellow');
+        });
+
+        $('h3').click(function() {
+           $('ul li').css('font-weight', 'bold');
+        });
+
 
     });
 </script>
