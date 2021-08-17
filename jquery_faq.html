@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery FAQ</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+        .parkHeading {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h1>10 FAQs about national parks</h1>
+<div>
+    <a href="#" id="hideUnhide">Click to toggle facts!</a>
+</div>
+<div>
+    <a href="#" id="parkHeaders">Click to toggle park name highlight!</a>
+</div>
+
+<dl>
+    <dt class="parkName">Great Sand Dunes National Park and Preserve</dt>
+    <dd class="invisible">Over 200 ponderosa pine trees that were historically used for food and medicine by American Indian tribes are protected by the only grove of trees on the National Register of Historic Places.</dd>
+
+    <dt class="parkName">Great Smoky Mountains National Park</dt>
+    <dd class="invisible">This park is home to over 1,500 types of flowering plants that bloom year-round. A Spring Wildflower Pilgrimage takes places each year, a festival with many guided walks and hikes.</dd>
+
+    <dt class="parkName">Guadalupe Mountains National Park</dt>
+    <dd class="invisible">More than 80 miles of trails will lead you through the woodlands, forests, and sand dunes of this park.</dd>
+
+    <dt class="parkName">Haleakala National Park</dt>
+    <dd class="invisible">Haleakala, meaning "House of the Sun" in Hawaiian, is one of the world's largest volcanic craters. When visiting, be sure to listen to advice on pacing and hydrating as the rim reaches over 10 thousand feet.</dd>
+
+    <dt class="parkName">Hawaii Volcanoes National Park</dt>
+    <dd class="invisible">As might be perceived by the parks name, two active volcanoes are within the bounds of this national park, Kilauea being the world's most active. They are safe and accessible to visit if you follow the rules of the park.</dd>
+
+    <dt class="parkName">Hot Springs National Park</dt>
+    <dd class="invisible">The thermal hot springs waters in  heat naturally to 143ºF.</dd>
+
+    <dt class="parkName">Isle Royale National Park</dt>
+    <dd class="invisible">Isle Royale National Park is the only national park in the United States that completely closes in the off-season. The park is typically closed November through mid-April due to extreme weather conditions.</dd>
+
+    <dt class="parkName">Joshua Tree National Park</dt>
+    <dd class="invisible">Joshua Tree National Park is named for the Joshua trees (Yucca brevifolia) native to the park.</dd>
+
+    <dt class="parkName">Katmai National Park and Preserve</dt>
+    <dd class="invisible">Katmai National Park and Preserve is home to the largest concentration of brown bears in the world. In fact, more bears than people are estimated to live on the Alaska Peninsula.</dd>
+
+    <dt class="parkName">Kenai Fjords National Park</dt>
+    <dd class="invisible">Kenai Fjords National Park  is named for the numerous fjords carved by glaciers moving down the mountains from the Harding Icefield.</dd>
+</dl>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(function () {
+        "use strict";
+
+        $("#hideUnhide").click(function() {
+           $('dd').toggleClass("invisible");
+        });
+
+        $('dt').click(function() {
+            $(this).toggleClass("parkHeading");
+        });
+
+        $('#parkHeaders').click(function() {
+            $('dt').toggleClass("parkHeading");
+        });
+
+    });
+</script>
+</body>
+</html>
