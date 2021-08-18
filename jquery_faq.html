@@ -104,6 +104,9 @@
            $('ul li').css('font-weight', 'bold');
         });
 
+        $("li").click(function() {
+            $(this).siblings().first().next().css("color", "blue");
+        });
 
     });
 </script>
