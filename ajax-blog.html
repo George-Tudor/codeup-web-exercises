@@ -12,16 +12,16 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
-            $.get("/data/blog.json").done(function(data){
-                data.forEach(function(data, index){
-                   $(posts).append('<h2>' + data.title + '</h2>' +
-                   '<span>' + data.date + '</span>' +
-                   '<p>' + data.content + '</p>' +
-                   '<h3>' + data.categories + '</h3>'
-                   );
+        $.get("./data/blog.json").done(function(data){
+            data.forEach(function(data, index){
+                $(posts).append('<h2>' + data.title + '</h2>' +
+                    '<span>' + data.date + '</span>' +
+                    '<p>' + data.content + '</p>' +
+                    '<h3>' + data.categories + '</h3>'
+                );
 
-                }); // end data.forEach()
-            }); // end .done()
+            }); // end data.forEach()
+        }); // end .done()
 
     }); // end document.ready
 
