@@ -2,89 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>First Map</title>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Mapbox Testing</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'>
     <style>
         #map {
-            width: 800px;
             height: 800px;
+            width: 800px;
         }
     </style>
 </head>
 <body>
-
-<!--<h3>Enter Address</h3>-->
-<!--<input id="address" type="text" placeholder="Enter address">-->
-<!--<button id="change-map-btn">Change Map</button>-->
-
+<h1>Mapbox Exercise 3</h1>
 <div id="map"></div>
 
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
-<script src="js/mapbox-geocode-utils.js"></script>
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
-    "use strict";
 
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
-
     var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 15,
-        center: [-98.4916, 29.4252]
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.491142, 29.424349], // starting position [lng, lat]
+        zoom: 10 // starting zoom
     });
 
-        geocode('San Antonio, TX', MAPBOX_API_TOKEN)
-            .then(function(result) {
-                map.setCenter(result);
-            })
-
-    // ======================= MARKERS AND POPUPS
-
-
-    // Adding a marker
-    //     var alamoMarker = new mapboxgl.Marker()
-    //         .setLngLat([-98.4861, 29.4260])
-    //         .addTo(map);
-
-    // Adding a popup
-    //     var popup = new mapboxgl.Popup()
-    //         .setLngLat([-98.489615, 29.426827])
-    //         .setHTML("<h1>Codeup Rocks!</h1><hr>")
-    //         .addTo(map);
-
-    // Adding a popup to a alamoMarker
-    //     var alamoPopup = new mapboxgl.Popup()
-    //         .setHTML("<h1>Remember The Alamo!</h1>");
-    //
-    //     alamoMarker.setPopup(alamoPopup);
-
-    // ======================= GEOCODING and REVERSE GEOCODING
-
-    // the geocode method from mapbox-geocoder-utils.js
-    // geocode("1600 Pennsylvania Ave.", MAPBOX_API_TOKEN).then(function(result) {
-    //     map.setCenter(result);
-    //     map.setZoom(13);
-    // });
-
-    // when the change map button is clicked, change the map to the geocoded result
-    // document.querySelector('#change-map-btn').addEventListener('click', function() {
-    //     var address = document.querySelector('#address').value;
-    //     geocode(address, MAPBOX_API_TOKEN)
-    //         .then(function(result) {
-    //             map.setCenter(result);
-    //         })
-    // });
+    setTimeout(function() {
+        geocode("Whitefish, Montana", MAPBOX_API_TOKEN).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(10);
+        });
+    }, 4000);
 
 
-    // // reverse geocode method from mapbox-geocoder-utils.js
-    // reverseGeocode({lng: -98.4861, lat: 29.4260}, MAPBOX_API_TOKEN).then(function(results) {
-    //     console.log(results);
-    // });
+    reverseGeocode({lng: -157.8060, lat: 21.2620}, MAPBOX_API_TOKEN).then(function(results) {
+        $('h1').after().append('<br>' + '<p>Longitude -157.8060 and Latitude 21.2620 are for </p>' + results + '<p>The map below is unrelated.</p>');
 
-
+        console.log(results);
+    });
 </script>
-
 </body>
 </html>
