@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Maps API</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mapbox Maps API</h1>
+<div id="map"></div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        // center: [-98.4916, 29.4252], // starting position [lng, lat]
+        zoom: 16 // starting zoom
+    });
+
+
+
+
+    //
+    // var ginoPopup = new mapboxgl.Popup()
+    //     .setHTML("<h2>Gino's Deli</h2>");
+    //
+    // ginosDeli.setPopup(ginoPopup);
+
+    var favoriteRestaurants = [
+        {
+            name: "Gino's Deli",
+            address: "13210 Huebner San Antonio TX 78230",
+            bestItem: "The BadA$$ Brad Sandwich"
+        },
+        {
+            name: "Maria's Pizza",
+            address: "3529 Oakgate San Antonio TX 78230",
+            bestItem: "Maria's Supreme"
+        },
+        {
+            name: "Godai Sushi Bar",
+            address: "11203 West Ave San Antonio TX 78213",
+            bestitem: "Seared & Pepper Crusted Tuna "
+        }
+        ];
+
+        // favoriteRestaurants.forEach(function(restaurant) {
+        //     geocode(favoriteRestaurants.address, MAPBOX_API_TOKEN).then(function(results) {
+        //         console.log(results);
+        //
+        //     });
+
+         // geocode("13210 Huebner San Antonio TX 78230", MAPBOX_API_TOKEN).then(function(result1) {
+         //     console.log(result1);
+         // });
+         //     geocode("11203 West Ave San Antonio TX 78213", MAPBOX_API_TOKEN).then(function(result2) {
+         //         console.log(result2);
+         //     });
+         //         geocode("3529 Oakgate San Antonio TX 78230", MAPBOX_API_TOKEN).then(function(result3) {
+         //             console.log(result3);
+
+            // new mapboxgl.Marker({})
+            //     .setLngLat([-77.03196, 38.89037])
+        // });
+
+</script>
+
+</body>
+</html>
