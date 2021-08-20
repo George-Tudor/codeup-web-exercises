@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        #content {
+            display: flex;
+        }
+    </style>
 </head>
 <body>
     <h1>Weather Map Project</h1>
+    <div id="content"></div>
 
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="js/keys.js"></script>
     <script>
+
+
         $.get('https://api.openweathermap.org/data/2.5/onecall', {
             appid: WEATHER_APP_ID,
             lat: 29.4252,
@@ -19,10 +28,35 @@
             units: 'imperial'
         }).done(function(data) {
             console.log(data);
-            console.log(data.current.clouds);
+            console.log(data.current.humidity);
+            data.daily.forEach(function (day) {
+                $('#content').append('<div class="card" style="width: 18rem;">' +
+                    '<div class="card-body">' +
+                    '<h5>' + Date(data.daily.dt) + '</h5>' +
+                    '<p>' + "Current Temperature: " + data.current.temp + '</p>' +
+                    '<p>' + "Today's Low: " + data.daily[0].temp.min + '</p>' +
+                    '<p>' + "Today's High: " + data.daily[0].temp.max + '</p>' +
+                    '</div>' +
+                    '</div>')
+            });
+
+            // $('#content').append('<div class="card" style="width: 18rem;">' +
+            //     '<div class="card-body">' +
+            //     '<h5>' + Date(data.daily.dt) + '</h5>' +
+            //     '<p>' + "Current Temperature: " + data.current.temp + '</p>' +
+            //     '<p>' + "Today's Low: " + data.daily[0].temp.min + '</p>' +
+            //     '<p>' + "Today's High: " + data.daily[0].temp.max + '</p>' +
+            //     '</div>' +
+            //     '</div>')
+
+
         }).fail(function(error) {
             console.log(error);
         });
+
+
+
+
     </script>
 
 </body>
