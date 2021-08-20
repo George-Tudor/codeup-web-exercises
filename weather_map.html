@@ -28,26 +28,72 @@
             units: 'imperial'
         }).done(function(data) {
             console.log(data);
-            console.log(data.current.humidity);
+
+            // This function takes a number between 0 and 360 and returns a
+// wind direction abbreviation. the MapBox API gives us a "wind degrees" datum
+// this takes the "wind degrees" and converts it into a familiar abbreviation
+            function windCardinalDirection(degrees){
+                let cardinalDirection = '';
+                if ((degrees > 348.75 && degrees <= 360) || (degrees >=0 && degrees <= 11.25)){
+                    cardinalDirection = "N";
+                } else if (degrees > 11.25 && degrees  <= 33.75) {
+                    cardinalDirection = "NNE";
+                } else if (degrees > 33.75 && degrees <= 56.25) {
+                    cardinalDirection = "NE";
+                } else if (degrees > 56.25 && degrees <= 78.75) {
+                    cardinalDirection = "ENE";
+                } else if (degrees > 78.75 && degrees <= 101.25) {
+                    cardinalDirection = "E";
+                } else if (degrees > 101.25 && degrees <= 123.75) {
+                    cardinalDirection = "ESE";
+                } else if (degrees > 123.75 && degrees <= 146.25) {
+                    cardinalDirection = "SE";
+                } else if (degrees > 146.25 && degrees <= 168.75) {
+                    cardinalDirection = "SSE";
+                } else if (degrees > 168.75 && degrees <= 191.25) {
+                    cardinalDirection = "S";
+                } else  if (degrees > 191.25 && degrees <= 213.75) {
+                    cardinalDirection = "SSW";
+                } else if (degrees > 213.75 && degrees <= 236.25)  {
+                    cardinalDirection = "SW";
+                } else if (degrees > 236.25 && degrees <= 258.75) {
+                    cardinalDirection = "WSW";
+                } else if (degrees > 258.75 && degrees <= 281.25) {
+                    cardinalDirection = "W";
+                } else if (degrees > 281.25 && degrees <= 303.75) {
+                    cardinalDirection = "WNW";
+                } else if (degrees > 303.75 && degrees <= 326.25) {
+                    cardinalDirection = "NW";
+                } else if (degrees > 326.75 && degrees <= 348.75) {
+                    cardinalDirection = "NNW";
+                }
+                return cardinalDirection;
+            }
+
             data.daily.forEach(function (day, index) {
-                $('#content').append('<div class="card" style="width: 18rem;">' +
-                    '<div class="card-body">' +
-                    '<h5>' + new Date(data.daily[index].dt * 1000) + '</h5>' +
-                    '<p>' + "Daytime Temp: " + data.daily[index].temp.day + '</p>' +
-                    '<p>' + "Low: " + data.daily[index].temp.min + '</p>' +
-                    '<p>' + "High: " + data.daily[index].temp.max + '</p>' +
-                    '</div>' +
-                    '</div>')
+                if(index > 4) {
+                    return;
+                } else {
+                    var wind = data.daily[index].wind_deg;
+                    console.log(wind);
+                    $('#content').append('<div class="card" style="width: 18rem;">' +
+                        '<div class="card-body">' +
+                        '<h5>' + new Date(data.daily[index].dt * 1000) + '</h5>' +
+                        '<hr>' +
+                        '<p>' + '<strong>Daytime Temp: </strong>' + data.daily[index].temp.day + '</p>' +
+                        '<p>' + '<strong>Low: </strong>' + data.daily[index].temp.min + '</p>' +
+                        '<p>' + '<strong>High: </strong>' + data.daily[index].temp.max + '</p>' +
+                        '<p>' + '<strong>Description: </strong>' + data.daily[index].weather[0].description + '</p>' +
+                        '<p>' + '<strong>Description: </strong>' + data.daily[index].weather[0].description + '</p>' +
+                        // '<p>' + "Description: " + data.daily[index].weather[0].icon + '</p>' +
+                        '<p>' + '<strong>Humidity: </strong>' + data.daily[index].humidity + '</p>' +
+                        '<p>' + '<strong>Wind: </strong>' + windCardinalDirection(wind) + '</p>' +
+                        '<p>' + '<strong>Pressure: </strong>' + data.daily[index].pressure + '</p>' +
+                        '</div>' +
+                        '</div>')
+                }
             });
 
-            // $('#content').append('<div class="card" style="width: 18rem;">' +
-            //     '<div class="card-body">' +
-            //     '<h5>' + Date(data.daily.dt) + '</h5>' +
-            //     '<p>' + "Current Temperature: " + data.current.temp + '</p>' +
-            //     '<p>' + "Today's Low: " + data.daily[0].temp.min + '</p>' +
-            //     '<p>' + "Today's High: " + data.daily[0].temp.max + '</p>' +
-            //     '</div>' +
-            //     '</div>')
 
 
         }).fail(function(error) {
