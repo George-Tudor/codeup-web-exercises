@@ -29,13 +29,13 @@
         }).done(function(data) {
             console.log(data);
             console.log(data.current.humidity);
-            data.daily.forEach(function (day) {
+            data.daily.forEach(function (day, index) {
                 $('#content').append('<div class="card" style="width: 18rem;">' +
                     '<div class="card-body">' +
-                    '<h5>' + Date(data.daily.dt) + '</h5>' +
-                    '<p>' + "Current Temperature: " + data.current.temp + '</p>' +
-                    '<p>' + "Today's Low: " + data.daily[0].temp.min + '</p>' +
-                    '<p>' + "Today's High: " + data.daily[0].temp.max + '</p>' +
+                    '<h5>' + new Date(data.daily[index].dt * 1000) + '</h5>' +
+                    '<p>' + "Daytime Temp: " + data.daily[index].temp.day + '</p>' +
+                    '<p>' + "Low: " + data.daily[index].temp.min + '</p>' +
+                    '<p>' + "High: " + data.daily[index].temp.max + '</p>' +
                     '</div>' +
                     '</div>')
             });
