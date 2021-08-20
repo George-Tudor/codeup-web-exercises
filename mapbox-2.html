@@ -12,6 +12,8 @@
     </style>
 </head>
 <body>
+    <h1>Mapbox 2 Exercise</h1>
+    <h1>Coordinates: <span id="coordinates"></span></h1>
     <div id="map"></div>
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
@@ -29,7 +31,7 @@
 
         var lincolnMarker = new mapboxgl.Marker({
             draggable: true
-        })  .setLngLat([-77.03196, 38.89037])
+        })  .setLngLat([-77.05018235129319, 38.88928820571607])
             .addTo(map);
 
 
@@ -38,9 +40,13 @@
 
         lincolnMarker.setPopup(lincolnPopup);
 
+        var headerCoords = document.querySelector('#coordinates');
+
+
         function onDragEnd() {
             var lngLat = lincolnMarker.getLngLat();
             lincolnPopup.setHTML(`Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`);
+            headerCoords.innerHTML = (`Longitude: ${lngLat.lng}, Latitude: ${lngLat.lat}`);
         }
 
         lincolnMarker.on('dragend', onDragEnd);
