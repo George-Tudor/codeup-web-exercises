@@ -43,38 +43,48 @@
         {
             name: "Gino's Deli",
             address: "13210 Huebner San Antonio TX 78230",
-            bestItem: "The BadA$$ Brad Sandwich"
+            bestItem: "The BadA$$ Brad Sandwich (Add Jalapenos)",
+            picture: "img/sandwich.jpg"
         },
         {
             name: "Maria's Pizza",
             address: "3529 Oakgate San Antonio TX 78230",
-            bestItem: "Maria's Supreme"
+            bestItem: "Maria's Supreme",
+            picture: "img/pizza.jpg"
         },
         {
             name: "Godai Sushi Bar",
-            address: "11203 West Ave San Antonio TX 78213",
-            bestitem: "Seared & Pepper Crusted Tuna "
+            address: "11203 West Avenue San Antonio, TX 78213",
+            bestItem: "Seared & Pepper Crusted Tuna ",
+            picture: "img/tuna.jpg"
         }
         ];
 
-        // favoriteRestaurants.forEach(function(restaurant) {
-        //     geocode(favoriteRestaurants.address, MAPBOX_API_TOKEN).then(function(results) {
-        //         console.log(results);
-        //
-        //     });
+        favoriteRestaurants.forEach(function(restaurant) {
+            geocode(restaurant.address, MAPBOX_API_TOKEN).then(function (results) {
+                console.log(results);
+                map.setCenter(results);
+                map.setZoom(10);
+                var restMark = new mapboxgl.Marker({})  .setLngLat(results)
+                    .addTo(map);
+                var restPopup =  new mapboxgl.Popup()
+                    .setHTML('<h3>' + restaurant.name + '<br>' + '<hr>' + 'Top Pick: ' + restaurant.bestItem + '<br>' + '<img src=' + restaurant.picture + '>' + '</h3>');
+                restMark.setPopup(restPopup);
 
-         // geocode("13210 Huebner San Antonio TX 78230", MAPBOX_API_TOKEN).then(function(result1) {
-         //     console.log(result1);
-         // });
-         //     geocode("11203 West Ave San Antonio TX 78213", MAPBOX_API_TOKEN).then(function(result2) {
-         //         console.log(result2);
-         //     });
-         //         geocode("3529 Oakgate San Antonio TX 78230", MAPBOX_API_TOKEN).then(function(result3) {
-         //             console.log(result3);
+            });
+        });
+//var lincolnMarker = new mapboxgl.Marker({
+//     draggable: true
+//     })  .setLngLat([-77.05018235129319, 38.88928820571607])
+//         .addTo(map);
+//
+//
+//     var lincolnPopup = new mapboxgl.Popup()
+//         .setHTML("<h1>Lincoln Memorial</h1>");
+//
+//     lincolnMarker.setPopup(lincolnPopup);
 
-            // new mapboxgl.Marker({})
-            //     .setLngLat([-77.03196, 38.89037])
-        // });
+
 
 </script>
 
