@@ -87,23 +87,24 @@
             function onDragEnd() {
                 var lngLat = dropMarker.getLngLat();
                 markerPopup.setHTML(`Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`);
-
+                $('.card').remove();
+                weather(lngLat.lat, lngLat.lng)
             }
 
 
 
             dropMarker.on('dragend', onDragEnd);
 
-            function weather() {
-
+            function weather(latitude, longitude) {
 
                 $.get('https://api.openweathermap.org/data/2.5/onecall', {
                     appid: WEATHER_APP_ID,
-                    lat: latitude,
-                    lon: longitude,
+                    lat: latitude || 29.4252,
+                    lon: longitude || -98.4916,
                     units: 'imperial'
                 }).done(function (data) {
                     console.log(data);
+
 
                     // This function takes a number between 0 and 360 and returns a
                     // wind direction abbreviation. the MapBox API gives us a "wind degrees" datum
