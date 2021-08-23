@@ -140,12 +140,12 @@
                             var wind = data.daily[index].wind_deg;
 
                             var labelsAndValues = [
-                                {text: 'Daytime Temp', value: data.daily[index].temp.day},
-                                {text: 'Low', value: data.daily[index].temp.min},
-                                {text: 'High', value: data.daily[index].temp.max},
+                                {text: 'Daytime Temp', value: data.daily[index].temp.day + '&deg; F'},
+                                {text: 'Low', value: data.daily[index].temp.min + '&deg; F'},
+                                {text: 'High', value: data.daily[index].temp.max + '&deg; F'},
                                 {text: 'Description', value: data.daily[index].weather[0].description},
-                                {text: 'Humidity', value: data.daily[index].humidity},
-                                {text: 'Wind', value: windCardinalDirection(wind)},
+                                {text: 'Humidity', value: data.daily[index].humidity + '%'},
+                                {text: 'Wind', value: data.daily[index].wind_speed + ' mph ' + windCardinalDirection(wind)},
                                 {text: 'Pressure', value: data.daily[index].pressure}
                             ];
 
