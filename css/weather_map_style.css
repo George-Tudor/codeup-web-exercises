@@ -1,0 +1,22 @@
+#content {
+    width: 95%;
+    max-width: 1280px;
+}
+
+#map {
+    height: 600px;
+    width: 95%;
+}
+
+.day-card {
+    background-color: #3B94D9;
+    color: white;
+    width: 250px;
+    margin-left: 5px;
+    margin-right:5px;
+    line-height: 16px;
+}
+
+.day-card-label {
+    font-size: 12px;
+}
