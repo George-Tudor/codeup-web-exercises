@@ -146,7 +146,9 @@
                                 {text: 'Description', value: data.daily[index].weather[0].description},
                                 {text: 'Humidity', value: data.daily[index].humidity + '%'},
                                 {text: 'Wind', value: data.daily[index].wind_speed + ' mph ' + windCardinalDirection(wind)},
-                                {text: 'Pressure', value: data.daily[index].pressure}
+                                {text: 'Pressure', value: data.daily[index].pressure},
+                                {text: 'icon', value: data.daily[index].weather[0].icon}
+
                             ];
 
                             var dataHtml = labelsAndValues.map(function (item) {
@@ -165,6 +167,7 @@
                                 <div class="day-card border rounded p-2">
                                     <div class="font-weight-bold">${formattedDate}</div>
                                     <hr>
+                                    <img src="img/${data.daily[index].weather[0].icon}.png">
                                     ${dataHtml}
                                 </div>
                             `)
