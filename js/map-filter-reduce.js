@@ -56,6 +56,24 @@ let averageyears = users.reduce((total, user, index, array) => {
     }
 }, 0);
 
+// let longestEmail = users.reduce((longemail, current) => {
+//     if(current.email.length > longemail.length) {
+//         longemail = current.email;
+//         return longemail;
+//     }
+// }, '');
+
+let longestEmail = users.reduce((email, current) => {
+    return (current.email.length > email.length) ? current.email : email;
+
+}, '');
+
+// let singleString = users.reduce((names, {name})=>{
+//     if
+//     return names + ', ' + name;
+// }, 'Your instructors are: ');
+
+let list = users.reduce((prev,curr) =>  prev.concat(curr.name),`Your instructors are: `)
 
 
 
