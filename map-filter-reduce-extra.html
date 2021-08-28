@@ -131,7 +131,10 @@ let allIsTrained = dogs.reduce((total, current) => {
 
   // TODO 10: what is the average age of each dog?
   console.log('Exercise 10:');
-
+      let avgAge = dogAges.reduce((total, current) => {
+        total = total + current.age / dogAges;
+        return total;
+      }, 0);
 
 
   // TODO 11: what is the average age of dogs that are trained?
