@@ -131,17 +131,30 @@ let allIsTrained = dogs.reduce((total, current) => {
 
   // TODO 10: what is the average age of each dog?
   console.log('Exercise 10:');
-      let avgAge = dogAges.reduce((total, current) => {
-        total = total + current.age / dogAges;
-        return total;
-      }, 0);
+      let avgAge = dogAges.reduce((total, current) => total + current / dogAges.length, 0);
 
 
   // TODO 11: what is the average age of dogs that are trained?
   console.log('Exercise 11:');
+  let avgAgeTrained = allIsTrained.reduce((total, current) => {
+
+  },0 );
 
   // TODO 12: what is the average length of names of untrained dogs?
   console.log('Exercise 12:');
+  let untrainedDogArr = dogs.reduce((total, current) => {
+      if(current.isTrained === false) {
+        total.push(current)
+      }
+      return total;
+  }, []);
+
+  let avgNameLength = untrainedDogArr.reduce((total, current) => {
+    total = total + current.dogName.length;
+    return total / untrainedDogArr.length;
+  }, 0);
+
+
 
   // TODO 13: what are the combined ages of all dogs in dog years? (7x more than a human year)
   console.log('Exercise 13:');
