@@ -9,7 +9,19 @@
 
 <script src="js/keys.js"></script>
 <script>
-    fetch(url, {headers: {'Authorization': 'token YOUR_TOKEN_HERE'}})
+    let username = 'George-Tudor';
+
+    const getLastPush = user => {
+        fetch(`https://api.github.com/users/${username}/events`, {
+            headers: {
+                'Authorization' : 'token' + GITHUB_API_TOKEN
+
+            }})
+        .then(response => response.json())
+        .then(response => response[0].created_at)
+        .then(console.log)
+        .catch(console.error)
+    }
 </script>
 </body>
 </html>
