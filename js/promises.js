@@ -12,4 +12,3 @@ const lastCommitTime = (userName) => {
 lastCommitTime('George-Tudor');
 
 
-
