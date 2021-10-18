@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend Warmup</title>
+</head>
+<body>
+<p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa cupiditate deleniti dolore ducimus eaque error ex facilis fugit, id inventore iste maxime molestiae numquam quaerat quia repellat suscipit, temporibus totam voluptatibus! Accusamus accusantium aliquid animi atque beatae blanditiis expedita facilis nesciunt quaerat quod recusandae saepe, sed sit totam voluptas.</p>
+<button id="hide-btn">Hide Paragraph</button>
+<button id="show-btn">Show Paragraph</button>
+
+<script>
+    document.getElementById("hide-btn").onclick = function() {
+        document.querySelector('#paragraph').style.visibility = "hidden";
+    };
+    document.getElementById("show-btn").onclick = function() {
+        document.querySelector('#paragraph').style.visibility = "visible";
+    }
+</script>
+</body>
+</html>
